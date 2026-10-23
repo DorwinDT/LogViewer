@@ -178,7 +178,9 @@ namespace LogViewer.McpServer
                 bool wroteResponse = await entry.Transport.HandlePostRequestAsync(message, buffer, token).ConfigureAwait(false);
                 if (wroteResponse)
                 {
-                    response.ContentType = "application/json";
+                    // StreamableHttpServerTransport always frames POST responses as SSE events
+                    // (event: message\ndata: ...), never as bare JSON, regardless of Accept header.
+                    response.ContentType = "text/event-stream";
                     response.StatusCode = 200;
                     buffer.Position = 0;
                     await buffer.CopyToAsync(response.OutputStream).ConfigureAwait(false);
