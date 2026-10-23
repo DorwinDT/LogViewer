@@ -10,7 +10,7 @@
         xmlns:dropDownCustomColorPicker="clr-namespace:DropDownCustomColorPicker;assembly=CustomColorPicker"
         xmlns:localization="clr-namespace:LogViewer.Localization"
         mc:Ignorable="d"
-        Title="{localization:LocBinding Settings}" Height="770" Width="760" MinWidth="720" MinHeight="610">
+        Title="{localization:LocBinding Settings}" Height="810" Width="760" MinWidth="720" MinHeight="650">
     <Window.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
@@ -61,6 +61,7 @@
                             <RowDefinition Height="40"/>
                             <RowDefinition Height="35"/>
                             <RowDefinition Height="35"/>
+                            <RowDefinition Height="30"/>
                             <RowDefinition Height="30"/>
                             <RowDefinition Height="30"/>
                             <RowDefinition Height="30"/>
@@ -137,6 +138,13 @@
 
                         <TextBlock Text="{localization:LocBinding CheckForUpdatesOnStartup}" ToolTip="{localization:LocBinding CheckForUpdatesOnStartupToolTip}" VerticalAlignment="Center"  Grid.Row="17"/>
                         <ToggleButton Grid.Row="17" Grid.Column="1" IsChecked="{Binding Path=CheckForUpdatesOnStartup}" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="0,5,0,0"/>
+
+                        <TextBlock Grid.Row="18" Text="{localization:LocBinding McpServerEnabled}" ToolTip="{localization:LocBinding McpServerEnabledToolTip}" VerticalAlignment="Center"/>
+                        <StackPanel Orientation="Horizontal" Grid.Row="18" Grid.Column="1">
+                            <ToggleButton IsChecked="{Binding Path=McpServerEnabled}" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="0,5,0,0"/>
+                            <TextBlock Text="{localization:LocBinding McpServerPort}" VerticalAlignment="Center" Margin="15,5,0,0" IsEnabled="{Binding Path=McpServerEnabled}"/>
+                            <TextBox Width="80" Margin="10,0,0,0" HorizontalContentAlignment="Left" Text="{Binding Path=McpServerPort, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" IsEnabled="{Binding Path=McpServerEnabled}"/>
+                        </StackPanel>
                     </Grid>
                 </GroupBox>
             </TabItem>

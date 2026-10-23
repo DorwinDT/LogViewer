@@ -1,4 +1,4 @@
-
+﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27130.2027
@@ -11,36 +11,86 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LogViewer.Core.Tests", "Log
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LogViewer.App.Tests", "LogViewer.App.Tests\LogViewer.App.Tests.csproj", "{C3D4E5F6-A7B8-9012-CDEF-123456789012}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LogViewer.McpServer", "LogViewer.McpServer\LogViewer.McpServer.csproj", "{6B89EE42-69B5-4FBE-8C87-092CDF7BC9C9}"
+EndProject
 Global
-	GlobalSection(Performance) = preSolution
-		HasPerformanceSessions = true
-	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
 		Release|Any CPU = Release|Any CPU
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{8265396A-E1B1-4214-8CC4-9029BFF32A3C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{8265396A-E1B1-4214-8CC4-9029BFF32A3C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8265396A-E1B1-4214-8CC4-9029BFF32A3C}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{8265396A-E1B1-4214-8CC4-9029BFF32A3C}.Debug|x64.Build.0 = Debug|Any CPU
+		{8265396A-E1B1-4214-8CC4-9029BFF32A3C}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{8265396A-E1B1-4214-8CC4-9029BFF32A3C}.Debug|x86.Build.0 = Debug|Any CPU
 		{8265396A-E1B1-4214-8CC4-9029BFF32A3C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8265396A-E1B1-4214-8CC4-9029BFF32A3C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8265396A-E1B1-4214-8CC4-9029BFF32A3C}.Release|x64.ActiveCfg = Release|Any CPU
+		{8265396A-E1B1-4214-8CC4-9029BFF32A3C}.Release|x64.Build.0 = Release|Any CPU
+		{8265396A-E1B1-4214-8CC4-9029BFF32A3C}.Release|x86.ActiveCfg = Release|Any CPU
+		{8265396A-E1B1-4214-8CC4-9029BFF32A3C}.Release|x86.Build.0 = Release|Any CPU
 		{A1B2C3D4-E5F6-7890-ABCD-EF1234567890}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{A1B2C3D4-E5F6-7890-ABCD-EF1234567890}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A1B2C3D4-E5F6-7890-ABCD-EF1234567890}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{A1B2C3D4-E5F6-7890-ABCD-EF1234567890}.Debug|x64.Build.0 = Debug|Any CPU
+		{A1B2C3D4-E5F6-7890-ABCD-EF1234567890}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{A1B2C3D4-E5F6-7890-ABCD-EF1234567890}.Debug|x86.Build.0 = Debug|Any CPU
 		{A1B2C3D4-E5F6-7890-ABCD-EF1234567890}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A1B2C3D4-E5F6-7890-ABCD-EF1234567890}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A1B2C3D4-E5F6-7890-ABCD-EF1234567890}.Release|x64.ActiveCfg = Release|Any CPU
+		{A1B2C3D4-E5F6-7890-ABCD-EF1234567890}.Release|x64.Build.0 = Release|Any CPU
+		{A1B2C3D4-E5F6-7890-ABCD-EF1234567890}.Release|x86.ActiveCfg = Release|Any CPU
+		{A1B2C3D4-E5F6-7890-ABCD-EF1234567890}.Release|x86.Build.0 = Release|Any CPU
 		{B2C3D4E5-F6A7-8901-BCDE-F12345678901}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{B2C3D4E5-F6A7-8901-BCDE-F12345678901}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B2C3D4E5-F6A7-8901-BCDE-F12345678901}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{B2C3D4E5-F6A7-8901-BCDE-F12345678901}.Debug|x64.Build.0 = Debug|Any CPU
+		{B2C3D4E5-F6A7-8901-BCDE-F12345678901}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{B2C3D4E5-F6A7-8901-BCDE-F12345678901}.Debug|x86.Build.0 = Debug|Any CPU
 		{B2C3D4E5-F6A7-8901-BCDE-F12345678901}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B2C3D4E5-F6A7-8901-BCDE-F12345678901}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B2C3D4E5-F6A7-8901-BCDE-F12345678901}.Release|x64.ActiveCfg = Release|Any CPU
+		{B2C3D4E5-F6A7-8901-BCDE-F12345678901}.Release|x64.Build.0 = Release|Any CPU
+		{B2C3D4E5-F6A7-8901-BCDE-F12345678901}.Release|x86.ActiveCfg = Release|Any CPU
+		{B2C3D4E5-F6A7-8901-BCDE-F12345678901}.Release|x86.Build.0 = Release|Any CPU
 		{C3D4E5F6-A7B8-9012-CDEF-123456789012}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{C3D4E5F6-A7B8-9012-CDEF-123456789012}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C3D4E5F6-A7B8-9012-CDEF-123456789012}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{C3D4E5F6-A7B8-9012-CDEF-123456789012}.Debug|x64.Build.0 = Debug|Any CPU
+		{C3D4E5F6-A7B8-9012-CDEF-123456789012}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{C3D4E5F6-A7B8-9012-CDEF-123456789012}.Debug|x86.Build.0 = Debug|Any CPU
 		{C3D4E5F6-A7B8-9012-CDEF-123456789012}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C3D4E5F6-A7B8-9012-CDEF-123456789012}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C3D4E5F6-A7B8-9012-CDEF-123456789012}.Release|x64.ActiveCfg = Release|Any CPU
+		{C3D4E5F6-A7B8-9012-CDEF-123456789012}.Release|x64.Build.0 = Release|Any CPU
+		{C3D4E5F6-A7B8-9012-CDEF-123456789012}.Release|x86.ActiveCfg = Release|Any CPU
+		{C3D4E5F6-A7B8-9012-CDEF-123456789012}.Release|x86.Build.0 = Release|Any CPU
+		{6B89EE42-69B5-4FBE-8C87-092CDF7BC9C9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6B89EE42-69B5-4FBE-8C87-092CDF7BC9C9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6B89EE42-69B5-4FBE-8C87-092CDF7BC9C9}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{6B89EE42-69B5-4FBE-8C87-092CDF7BC9C9}.Debug|x64.Build.0 = Debug|Any CPU
+		{6B89EE42-69B5-4FBE-8C87-092CDF7BC9C9}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{6B89EE42-69B5-4FBE-8C87-092CDF7BC9C9}.Debug|x86.Build.0 = Debug|Any CPU
+		{6B89EE42-69B5-4FBE-8C87-092CDF7BC9C9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6B89EE42-69B5-4FBE-8C87-092CDF7BC9C9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6B89EE42-69B5-4FBE-8C87-092CDF7BC9C9}.Release|x64.ActiveCfg = Release|Any CPU
+		{6B89EE42-69B5-4FBE-8C87-092CDF7BC9C9}.Release|x64.Build.0 = Release|Any CPU
+		{6B89EE42-69B5-4FBE-8C87-092CDF7BC9C9}.Release|x86.ActiveCfg = Release|Any CPU
+		{6B89EE42-69B5-4FBE-8C87-092CDF7BC9C9}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {5A6D59FA-4E0E-46DB-A5C1-8CA30376F1EF}
+	EndGlobalSection
+	GlobalSection(Performance) = preSolution
+		HasPerformanceSessions = true
 	EndGlobalSection
 EndGlobal

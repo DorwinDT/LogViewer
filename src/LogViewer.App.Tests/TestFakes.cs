@@ -32,6 +32,8 @@ namespace LogViewer.App.Tests
         public bool ShowMessageHighlightByReceiverColor => false;
         public List<HighlightRuleItem> HighlightRules { get; } = new List<HighlightRuleItem>();
         public bool IsSeparateIpLoggersByPort => false;
+        public bool McpServerEnabled => false;
+        public int McpServerPort => 7073;
         public bool Save() => true;
     }
 

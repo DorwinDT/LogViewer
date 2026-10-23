@@ -72,6 +72,12 @@ namespace LogViewer.Services
         /// </summary>
         bool IsSeparateIpLoggersByPort { get; }
 
+        /// <summary>Run the in-process MCP server (HTTP, localhost) while the app is open.</summary>
+        bool McpServerEnabled { get; }
+
+        /// <summary>Localhost port for the MCP server.</summary>
+        int McpServerPort { get; }
+
         /// <summary>Write XML to disk. false means a serialization error; the UI shows a warning.</summary>
         bool Save();
     }

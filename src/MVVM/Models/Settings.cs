@@ -87,6 +87,17 @@ namespace LogViewer.MVVM.Models
         public bool CheckForUpdatesOnStartup { get; set; } = true;
 
         /// <summary>
+        /// Run an in-process MCP server (HTTP, localhost only) while the app is open, so an MCP client such
+        /// as Claude can read the live log buffer. Off by default: it opens a local port.
+        /// </summary>
+        public bool McpServerEnabled { get; set; } = false;
+
+        /// <summary>
+        /// Localhost port for the MCP server when <see cref="McpServerEnabled"/> is on.
+        /// </summary>
+        public int McpServerPort { get; set; } = 7073;
+
+        /// <summary>
         /// Version of the last run, used to show Release Notes once after an update.
         /// Missing in settings.xml of a fresh install, so nothing is shown then.
         /// </summary>
@@ -212,6 +223,8 @@ namespace LogViewer.MVVM.Models
                     Instance.HighlightRules = settings.HighlightRules ?? new List<HighlightRuleItem>();
                     Instance.IsSeparateIpLoggersByPort = settings.IsSeparateIpLoggersByPort;
                     Instance.CheckForUpdatesOnStartup = settings.CheckForUpdatesOnStartup;
+                    Instance.McpServerEnabled = settings.McpServerEnabled;
+                    Instance.McpServerPort = settings.McpServerPort;
                     Instance.LastRunVersion = settings.LastRunVersion;
                     Instance.Language = settings.Language;
 

@@ -1,0 +1,19 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <!--
+    In-process MCP server exposing the live LogSession buffer to MCP clients over HTTP.
+    No ASP.NET Core here: the host process is .NET Framework 4.8 and cannot host Kestrel,
+    so the Streamable HTTP transport from ModelContextProtocol.Core is wired to a plain
+    System.Net.HttpListener instead of ModelContextProtocol.AspNetCore.
+  -->
+  <PropertyGroup>
+    <TargetFramework>net48</TargetFramework>
+    <!-- Not pinned to 7.3 like LogViewer.Core.Tests: the MCP SDK's init-only properties need C# 9+. -->
+    <LangVersion>9.0</LangVersion>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="ModelContextProtocol.Core" Version="2.3.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\LogViewer.Core\LogViewer.Core.csproj" />
+  </ItemGroup>
+</Project>

@@ -1032,6 +1032,18 @@ Details were written to the application log:
   <data name="CheckForUpdatesOnStartupToolTip" xml:space="preserve">
     <value>A few seconds after start, check GitHub Releases for a new version</value>
   </data>
+  <data name="McpServerEnabled" xml:space="preserve">
+    <value>MCP server:</value>
+  </data>
+  <data name="McpServerEnabledToolTip" xml:space="preserve">
+    <value>Runs a local MCP server (HTTP, localhost only) so an MCP client (such as Claude) can read the log buffer while the app is open</value>
+  </data>
+  <data name="McpServerPort" xml:space="preserve">
+    <value>port:</value>
+  </data>
+  <data name="McpServerPortInvalid" xml:space="preserve">
+    <value>The MCP server port must be between 1 and 65535</value>
+  </data>
   <data name="SettingsUnreadableMessage" xml:space="preserve">
     <value>The settings file {0} could not be read. Default settings are used.</value>
   </data>

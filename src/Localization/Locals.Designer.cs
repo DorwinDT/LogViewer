@@ -294,7 +294,43 @@ namespace LogViewer.Localization {
                 return ResourceManager.GetString("CheckForUpdatesOnStartupToolTip", resourceCulture);
             }
         }
-        
+
+        /// <summary>
+        ///   Looks up a localized string similar to MCP-сервер:.
+        /// </summary>
+        internal static string McpServerEnabled {
+            get {
+                return ResourceManager.GetString("McpServerEnabled", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Запускает локальный MCP-сервер (HTTP, только localhost), чтобы MCP-клиент (например, Claude) мог читать буфер логов, пока приложение открыто.
+        /// </summary>
+        internal static string McpServerEnabledToolTip {
+            get {
+                return ResourceManager.GetString("McpServerEnabledToolTip", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to порт:.
+        /// </summary>
+        internal static string McpServerPort {
+            get {
+                return ResourceManager.GetString("McpServerPort", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Порт MCP-сервера должен быть в диапазоне от 1 до 65535.
+        /// </summary>
+        internal static string McpServerPortInvalid {
+            get {
+                return ResourceManager.GetString("McpServerPortInvalid", resourceCulture);
+            }
+        }
+
         /// <summary>
         ///   Looks up a localized string similar to Очистить.
         /// </summary>

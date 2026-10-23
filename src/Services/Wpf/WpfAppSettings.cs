@@ -24,6 +24,8 @@ namespace LogViewer.Services.Wpf
         public bool ShowMessageHighlightByReceiverColor => Settings.Instance.ShowMessageHighlightByReceiverColor;
         public System.Collections.Generic.List<HighlightRuleItem> HighlightRules => Settings.Instance.HighlightRules;
         public bool IsSeparateIpLoggersByPort => Settings.Instance.IsSeparateIpLoggersByPort;
+        public bool McpServerEnabled => Settings.Instance.McpServerEnabled;
+        public int McpServerPort => Settings.Instance.McpServerPort;
         public bool Save() => Settings.Instance.Save();
     }
 }

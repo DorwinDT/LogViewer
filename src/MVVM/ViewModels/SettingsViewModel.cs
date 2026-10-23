@@ -179,6 +179,36 @@ namespace LogViewer.MVVM.ViewModels
             }
         }
 
+        private bool mcpServerEnabled;
+
+        /// <summary>
+        /// Run the in-process MCP server (HTTP, localhost) while the app is open.
+        /// </summary>
+        public bool McpServerEnabled
+        {
+            get => mcpServerEnabled;
+            set
+            {
+                mcpServerEnabled = value;
+                OnPropertyChanged();
+            }
+        }
+
+        private int mcpServerPort;
+
+        /// <summary>
+        /// Localhost port for the MCP server.
+        /// </summary>
+        public int McpServerPort
+        {
+            get => mcpServerPort;
+            set
+            {
+                mcpServerPort = value;
+                OnPropertyChanged();
+            }
+        }
+
         /// <summary>
         /// Displayed date format.
         /// </summary>
@@ -568,6 +598,8 @@ namespace LogViewer.MVVM.ViewModels
                 MinimizeToTray = Settings.Instance.MinimizeToTray;
                 OnlyOneAppInstance = Settings.Instance.OnlyOneAppInstance;
                 CheckForUpdatesOnStartup = Settings.Instance.CheckForUpdatesOnStartup;
+                McpServerEnabled = Settings.Instance.McpServerEnabled;
+                McpServerPort = Settings.Instance.McpServerPort;
                 SelectedDataFormat = Settings.Instance.DataFormat;
                 DisplayedDataFormat = Settings.Instance.DataFormat;
                 IsEnableMaxMessageBufferSize = Settings.Instance.IsEnabledMaxMessageBufferSize;
@@ -673,6 +705,12 @@ namespace LogViewer.MVVM.ViewModels
 
         private void Save(object obj)
         {
+            if (McpServerEnabled && (McpServerPort < 1 || McpServerPort > 65535))
+            {
+                MessageBox.Show(Locals.McpServerPortInvalid, Locals.Error, MessageBoxButton.OK, MessageBoxImage.Error);
+                return;
+            }
+
             if (Receivers.Count != Receivers.DistinctBy(x => (x.Port, x.Transport)).Count())
             {
                 MessageBox.Show(Locals.SettingsSaveErrorSamePortNumber, Locals.Error, MessageBoxButton.OK, MessageBoxImage.Error);
@@ -718,6 +756,8 @@ namespace LogViewer.MVVM.ViewModels
             Settings.Instance.DeletedMessagesCount = DeletedMessagesCount;
             Settings.Instance.OnlyOneAppInstance = OnlyOneAppInstance;
             Settings.Instance.CheckForUpdatesOnStartup = CheckForUpdatesOnStartup;
+            Settings.Instance.McpServerEnabled = McpServerEnabled;
+            Settings.Instance.McpServerPort = McpServerPort;
             Settings.Instance.Language = SelectedLanguage.Name;
             Settings.Instance.IsSeparateIpLoggersByPort = IsSeparateIpLoggersByPort;
             Settings.Instance.HighlightRules = HighlightRules.ToList();

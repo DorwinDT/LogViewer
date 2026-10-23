@@ -32,6 +32,7 @@ namespace LogViewer.MVVM.ViewModels
         private readonly LogSessionPresenter _presenter;
         private readonly SettingsChangeApplier _settingsApplier = new SettingsChangeApplier();
         private readonly RowHighlightApplier _highlight;
+        private readonly McpServerViewModel _mcpServer;
         private readonly IResettable[] _parts;
 
         private bool _cleanIsEnabled;
@@ -75,6 +76,7 @@ namespace LogViewer.MVVM.ViewModels
             IsThreadVisible = _settings.IsShowThreadColumn;
 
             Receivers = new ReceiversViewModel(d.Processing, d.Adapter, d.Coordinator, d.SourceFactory, d.Dialogs, d.Settings.Receivers);
+            _mcpServer = new McpServerViewModel(d.Processing, d.Settings, Receivers);
             Timeline = new ErrorTimelineViewModel(d.ViewState, d.Settings, d.TimelineTimer);
             Bookmarks = new BookmarksViewModel(d.ViewState, d.Dialogs);
             MessageGroups = new MessageGroupsViewModel(d.ViewState, d.Dialogs, d.MessageGroupsTimer);
@@ -222,6 +224,7 @@ namespace LogViewer.MVVM.ViewModels
                 _settingsApplier.Apply(_settings, _state, _session, Receivers, Timeline,
                     v => IsSourceVisible = v, v => IsThreadVisible = v, ApplyMessageDisplaySettings,
                     b => IconColor = b, b => FontColor = b, IconColor, _highlight);
+                _mcpServer.ApplySettings();
                 if (isProgress) Receivers.Start();
             }
             else if (isProgress) Receivers.Start();
@@ -271,6 +274,7 @@ namespace LogViewer.MVVM.ViewModels
             _adapter?.FlushPending();
             _adapter?.Dispose();
             _processing?.RemoveAllSources();
+            _mcpServer?.Dispose();
         }
     }
 }
